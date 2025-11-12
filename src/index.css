@@ -4,5 +4,5 @@
   name: "light";
   default: true;
   --color-primary: #35374B;
-  --color-secondary: teal;
+  --color-secondary: #35374B50;
 }

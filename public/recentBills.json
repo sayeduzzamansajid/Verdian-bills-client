@@ -1,0 +1,322 @@
+[
+  {
+    "title": "Frequent Power Outage in Mirpur",
+    "category": "Electricity",
+    "email": "creator@gmail.com",
+    "location": "Mirpur-10, Dhaka",
+    "description": "Power cuts occur daily in the evening, affecting daily life and work.",
+    "image": "https://media.istockphoto.com/id/1372200846/photo/electricity-transmission-towers-with-orange-glowing-wires-against-night-sky.jpg?s=2048x2048&w=is&k=20&c=CXTPGApI6QKoWqzI_87qOl2ac5OoTySgHfuj-AHLCto=",
+    "date": "2025-10-26",
+    "amount": 260
+  },
+  {
+    "title": "October Gas Bill - Uttara",
+    "category": "Gas",
+    "email": "creator@gmail.com",
+    "location": "Uttara, Dhaka",
+    "description": "Standard monthly gas consumption for residential use.",
+    "image": "https://media.istockphoto.com/id/1474654783/photo/woman-turning-on-the-gas-burner-on-the-stove.jpg?s=2048x2048&w=is&k=20&c=kmCeeGIPbMhc4AHMce-iqn-eXs_cyQXJDCL2g7YPv58=",
+    "date": "2025-10-28",
+    "amount": 850
+  },
+  {
+    "title": "November Water Bill - Gulshan",
+    "category": "Water",
+    "email": "creator@gmail.com",
+    "location": "Gulshan-1, Dhaka",
+    "description": "Regular water supply charges for the month of November.",
+    "image": "https://cdn.pixabay.com/photo/2020/06/01/08/46/water-5245722_1280.jpg",
+    "date": "2025-11-20",
+    "amount": 420
+  },
+  {
+    "title": "October Internet Bill - Dhanmondi",
+    "category": "Internet",
+    "email": "creator@gmail.com",
+    "location": "Dhanmondi, Dhaka",
+    "description": "High-speed internet package bill for October.",
+    "image": "https://cdn.pixabay.com/photo/2020/04/08/16/32/keyboard-5017973_1280.jpg",
+    "date": "2025-10-30",
+    "amount": 1200
+  },
+  {
+    "title": "Electricity Bill - Khilgaon",
+    "category": "Electricity",
+    "email": "creator@gmail.com",
+    "location": "Khilgaon, Dhaka",
+    "description": "Household electricity usage with peak hour charges.",
+    "image": "https://cdn.pixabay.com/photo/2014/10/26/14/36/light-bulb-503881_1280.jpg",
+    "date": "2025-11-25",
+    "amount": 780
+  },
+  {
+    "title": "Gas Supply Interruption - Mohammadpur",
+    "category": "Gas",
+    "email": "creator@gmail.com",
+    "location": "Mohammadpur, Dhaka",
+    "description": "Temporary gas supply issues, bill adjusted accordingly.",
+    "image": "https://cdn.pixabay.com/photo/2022/03/17/17/06/gas-stove-7075036_1280.jpg",
+    "date": "2025-10-29",
+    "amount": 600
+  },
+  {
+    "title": "Water Meter Replacement - Banani",
+    "category": "Water",
+    "email": "creator@gmail.com",
+    "location": "Banani, Dhaka",
+    "description": "Charges for new water meter installation and November usage.",
+    "image": "https://i.pinimg.com/736x/4b/36/9d/4b369d0b9d371d86a2fa3963501a580d.jpg",
+    "date": "2025-11-22",
+    "amount": 550
+  },
+  {
+    "title": "Internet Upgrade - Baridhara",
+    "category": "Internet",
+    "email": "creator@gmail.com",
+    "location": "Baridhara, Dhaka",
+    "description": "Upgraded internet package with higher speed for November.",
+    "image": "https://cdn.pixabay.com/photo/2017/08/10/08/47/laptop-2620118_1280.jpg",
+    "date": "2025-11-28",
+    "amount": 1500
+  },
+  {
+    "title": "October Electricity Bill - Old Dhaka",
+    "category": "Electricity",
+    "email": "creator@gmail.com",
+    "location": "Old Dhaka, Dhaka",
+    "description": "Residential electricity bill, including energy conservation tips.",
+    "image": "https://cdn.pixabay.com/photo/2016/11/29/08/16/power-lines-1868352_1280.jpg",
+    "date": "2025-10-27",
+    "amount": 340
+  },
+  {
+    "title": "November Gas Bill - Bashundhara",
+    "category": "Gas",
+    "email": "creator@gmail.com",
+    "location": "Bashundhara R/A, Dhaka",
+    "description": "Monthly gas charges for a large household.",
+    "image": "https://cdn.pixabay.com/photo/2017/08/02/18/01/kettle-2572663_1280.jpg",
+    "date": "2025-11-29",
+    "amount": 1100
+  },
+  {
+    "title": "October Water Bill - Farmgate",
+    "category": "Water",
+    "email": "creator@gmail.com",
+    "location": "Farmgate, Dhaka",
+    "description": "Water consumption charges with slight increase due to summer.",
+    "image": "https://cdn.pixabay.com/photo/2018/12/03/14/02/water-3853492_1280.jpg",
+    "date": "2025-10-25",
+    "amount": 380
+  },
+  {
+    "title": "Internet Service Disruption - Lalmatia",
+    "category": "Internet",
+    "email": "creator@gmail.com",
+    "location": "Lalmatia, Dhaka",
+    "description": "Bill adjusted for a 3-day internet service interruption in November.",
+    "image": "https://cdn.pixabay.com/photo/2020/07/25/09/06/modem-5436144_1280.jpg",
+    "date": "2025-11-27",
+    "amount": 950
+  },
+  {
+    "title": "December Electricity Bill - Cantonment",
+    "category": "Electricity",
+    "email": "creator@gmail.com",
+    "location": "Cantonment, Dhaka",
+    "description": "Anticipated electricity bill for December, higher due to heating.",
+    "image": "https://cdn.pixabay.com/photo/2016/08/18/20/05/light-bulbs-1603766_1280.jpg",
+    "date": "2025-12-24",
+    "amount": 920
+  },
+  {
+    "title": "October Gas Bill - Demra",
+    "category": "Gas",
+    "email": "creator@gmail.com",
+    "location": "Demra, Dhaka",
+    "description": "Monthly gas bill with a new connection charge.",
+    "image": "https://cdn.pixabay.com/photo/2017/08/10/04/55/gas-2618346_1280.jpg",
+    "date": "2025-10-31",
+    "amount": 980
+  },
+  {
+    "title": "November Water Bill - Tejgaon",
+    "category": "Water",
+    "email": "creator@gmail.com",
+    "location": "Tejgaon, Dhaka",
+    "description": "Commercial water usage bill for November.",
+    "image": "https://cdn.pixabay.com/photo/2020/06/01/08/46/water-5245722_1280.jpg",
+    "date": "2025-11-23",
+    "amount": 700
+  },
+  {
+    "title": "Internet Bill - Shahbagh (October)",
+    "category": "Internet",
+    "email": "creator@gmail.com",
+    "location": "Shahbagh, Dhaka",
+    "description": "Academic internet package bill for university area.",
+    "image": "https://cdn.pixabay.com/photo/2020/07/25/09/08/modem-5436146_1280.jpg",
+    "date": "2025-10-29",
+    "amount": 1050
+  },
+  {
+    "title": "Electricity Bill - Badda",
+    "category": "Electricity",
+    "email": "creator@gmail.com",
+    "location": "Badda, Dhaka",
+    "description": "Residential electricity consumption for November, average usage.",
+    "image": "https://cdn.pixabay.com/photo/2018/06/21/20/23/lightbulb-3489395_1280.jpg",
+    "date": "2025-11-26",
+    "amount": 630
+  },
+  {
+    "title": "Gas Bill - Jatrabari (November)",
+    "category": "Gas",
+    "email": "creator@gmail.com",
+    "location": "Jatrabari, Dhaka",
+    "description": "Monthly gas usage, standard household rate.",
+    "image": "https://cdn.pixabay.com/photo/2022/04/10/17/28/gas-stove-7123856_1280.jpg",
+    "date": "2025-11-30",
+    "amount": 790
+  },
+  {
+    "title": "Water Pipe Leak Repair - Uttara",
+    "category": "Water",
+    "email": "creator@gmail.com",
+    "location": "Uttara Sector 10, Dhaka",
+    "description": "Emergency water pipe repair charges and monthly usage.",
+    "image": "https://cdn.pixabay.com/photo/2020/06/01/08/46/water-5245722_1280.jpg",
+    "date": "2025-10-24",
+    "amount": 680
+  },
+  {
+    "title": "November Internet Bill - Malibagh",
+    "category": "Internet",
+    "email": "creator@gmail.com",
+    "location": "Malibagh, Dhaka",
+    "description": "Fiber optic internet plan for November.",
+    "image": "https://cdn.pixabay.com/photo/2018/04/07/07/27/switch-3297900_1280.jpg",
+    "date": "2025-11-29",
+    "amount": 1300
+  },
+  {
+    "title": "Electricity Bill - Tejgaon Industrial Area",
+    "category": "Electricity",
+    "email": "creator@gmail.com",
+    "location": "Tejgaon Industrial Area, Dhaka",
+    "description": "Industrial electricity consumption for October.",
+    "image": "https://cdn.pixabay.com/photo/2016/11/21/18/20/bright-1847006_1280.jpg",
+    "date": "2025-10-28",
+    "amount": 1800
+  },
+  {
+    "title": "Gas Bill - Mirpur DOHS (October)",
+    "category": "Gas",
+    "email": "creator@gmail.com",
+    "location": "Mirpur DOHS, Dhaka",
+    "description": "October gas charges for a premium residential area.",
+    "image": "https://media.istockphoto.com/id/1474654783/photo/woman-turning-on-the-gas-burner-on-the-stove.jpg?s=2048x2048&w=is&k=20&c=kmCeeGIPbMhc4AHMce-iqn-eXs_cyQXJDCL2g7YPv58=",
+    "date": "2025-10-27",
+    "amount": 900
+  },
+  {
+    "title": "Water Bill - Mohammadpur Housing",
+    "category": "Water",
+    "email": "creator@gmail.com",
+    "location": "Mohammadpur Housing, Dhaka",
+    "description": "November water bill with community service charge.",
+    "image": "https://i.pinimg.com/736x/4b/36/9d/4b369d0b9d371d86a2fa3963501a580d.jpg",
+    "date": "2025-11-21",
+    "amount": 470
+  },
+  {
+    "title": "Internet Plan Renewal - Rampura",
+    "category": "Internet",
+    "email": "creator@gmail.com",
+    "location": "Rampura, Dhaka",
+    "description": "Annual internet plan renewal for November.",
+    "image": "https://cdn.pixabay.com/photo/2020/04/08/16/32/keyboard-5017973_1280.jpg",
+    "date": "2025-11-26",
+    "amount": 1150
+  },
+  {
+    "title": "Electricity Meter Fault - Keraniganj",
+    "category": "Electricity",
+    "email": "creator@gmail.com",
+    "location": "Keraniganj, Dhaka",
+    "description": "Estimated bill for October due to faulty meter, awaiting replacement.",
+    "image": "https://media.istockphoto.com/id/1372200846/photo/electricity-transmission-towers-with-orange-glowing-wires-against-night-sky.jpg?s=2048x2048&w=is&k=20&c=CXTPGApI6QKoWqzI_87qOl2ac5OoTySgHfuj-AHLCto=",
+    "date": "2025-10-25",
+    "amount": 580
+  },
+  {
+    "title": "Gas Connection Fee - Savar",
+    "category": "Gas",
+    "email": "creator@gmail.com",
+    "location": "Savar, Dhaka",
+    "description": "New gas connection fee plus first month's usage.",
+    "image": "https://cdn.pixabay.com/photo/2022/03/17/17/06/gas-stove-7075036_1280.jpg",
+    "date": "2025-11-28",
+    "amount": 1400
+  },
+  {
+    "title": "Water Bill - Gazipur City",
+    "category": "Water",
+    "email": "creator@gmail.com",
+    "location": "Gazipur, Dhaka",
+    "description": "Commercial water bill for November, high consumption.",
+    "image": "https://cdn.pixabay.com/photo/2018/12/03/14/02/water-3853492_1280.jpg",
+    "date": "2025-11-24",
+    "amount": 850
+  },
+  {
+    "title": "Internet Bill - Gulshan-2 (December)",
+    "category": "Internet",
+    "email": "creator@gmail.com",
+    "location": "Gulshan-2, Dhaka",
+    "description": "Premium internet package for December, with dedicated support.",
+    "image": "https://cdn.pixabay.com/photo/2017/08/10/08/47/laptop-2620118_1280.jpg",
+    "date": "2025-12-27",
+    "amount": 1800
+  },
+  {
+    "title": "Electricity Bill - Narayanganj",
+    "category": "Electricity",
+    "email": "creator@gmail.com",
+    "location": "Narayanganj, Dhaka",
+    "description": "Industrial area electricity bill for November, standard rates.",
+    "image": "https://cdn.pixabay.com/photo/2016/11/29/08/16/power-lines-1868352_1280.jpg",
+    "date": "2025-11-27",
+    "amount": 1600
+  },
+  {
+    "title": "Gas Bill - Elephant Road (November)",
+    "category": "Gas",
+    "email": "creator@gmail.com",
+    "location": "Elephant Road, Dhaka",
+    "description": "Monthly gas bill for residential apartments.",
+    "image": "https://cdn.pixabay.com/photo/2017/08/02/18/01/kettle-2572663_1280.jpg",
+    "date": "2025-11-29",
+    "amount": 750
+  },
+  {
+    "title": "Water Bill - Siddique Bazar (October)",
+    "category": "Water",
+    "email": "creator@gmail.com",
+    "location": "Siddique Bazar, Dhaka",
+    "description": "Commercial water usage, including a small late fee.",
+    "image": "https://cdn.pixabay.com/photo/2020/06/01/08/46/water-5245722_1280.jpg",
+    "date": "2025-10-30",
+    "amount": 510
+  },
+  {
+    "title": "Internet Bill - Bashundhara R/A (October)",
+    "category": "Internet",
+    "email": "creator@gmail.com",
+    "location": "Bashundhara R/A, Dhaka",
+    "description": "High-speed internet package for October, no issues reported.",
+    "image": "https://cdn.pixabay.com/photo/2020/07/25/09/06/modem-5436144_1280.jpg",
+    "date": "2025-10-31",
+    "amount": 1250
+  }
+]

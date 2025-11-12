@@ -33,7 +33,7 @@ const Category = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 justify-items-center">
                     {
                         categories.map((cat) => (
-                            <div key={cat.id} className="w-36 h-36 flex flex-col items-center justify-center bg-gray-50  shadow-md rounded-2xl hover:shadow-xl transition-transform hover:scale-105 cursor-pointer">
+                            <div key={cat.id} className="w-36 h-36 flex flex-col items-center justify-center bg-primary text-white  shadow-md rounded-2xl hover:shadow-xl transition-transform hover:scale-105 cursor-pointer">
                                 <div className={`text-4xl ${cat.color} w-16 h-16 flex items-center justify-center rounded-full mb-3`}>
                                     {cat.icon}
                                 </div>

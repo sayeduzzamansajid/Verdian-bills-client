@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from './../Context/AuthContext';
+import { Link, NavLink } from 'react-router';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
+    const { user, setUser,togl,setTogl,logOut } = useContext(AuthContext)
+    const handleLogout = () => {
+        console.log("logout clicked");
+        logOut()
+            .then(res => {
+                console.log(res);
+                setUser(null)
+               toast.success("log out successfull")
+            })
+            .catch(err => {
+                console.log(err);
+                toast.error(err.message)
+            });
+    }
     return (
 
         <div className="navbar bg-primary text-white shadow-sm lg:px-[5vw]">
@@ -11,20 +28,17 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Home</a></li>
-                        <li><a>Add Bill</a></li>
-                        <li><a>Bills</a></li>
+                        className="menu menu-sm dropdown-content bg-primary text-white rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        <NavLink>Home</NavLink>
+                        <NavLink>All Bills</NavLink>
+                        <NavLink>My Profile</NavLink>
                         <li>
                             <a>Parent</a>
                             <ul className="p-2">
                                 <li><a>Bills</a></li>
                                 <li><a>Add Bill</a></li>
                             </ul>
-                            <br />
-
-                            <li><a>My Profile</a></li>
-                            <li><a>Logout</a></li>
+                            <NavLink onClick={handleLogout}>Logout</NavLink>
                         </li>
                     </ul>
                 </div>
@@ -47,28 +61,40 @@ const Navbar = () => {
 
                 </ul>
             </div>
+
             <div className="navbar-end">
-                <div className="dropdown dropdown-end">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img
-                                alt="Tailwind CSS Navbar component"
-                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                {
+                    user ? <div className="dropdown dropdown-end">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img
+                                    alt="user profile picture"
+                                    src={user.photoURL} />
+                            </div>
                         </div>
+                        <ul
+                            tabIndex="-1"
+                            className="menu menu-sm max-sm:hidden dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow text-white bg-primary">
+                            <li>
+                                <a className="justify-between">
+                                    Profile
+                                    <span className="badge">New</span>
+                                </a>
+                            </li>
+                            <li><a>Settings</a></li>
+                            <li onClick={handleLogout}><a>Logout</a></li>
+                        </ul>
+                    </div> : <div>
+                        <Link to={"/auth/login"}>
+                        <button onClick={()=>setTogl(true)} className={`btn btn-primary ${togl?"bg-white text-black":""}` }>Login</button>
+                        </Link>
+                        <Link to={"/auth/signup"}>
+                        <button onClick={()=>setTogl(false)} className={`btn btn-primary ${togl?"":"bg-white text-black"}` }>Sign Up</button>
+                        </Link>
                     </div>
-                    <ul
-                        tabIndex="-1"
-                        className="menu menu-sm max-sm:hidden dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-white bg-primary">
-                        <li>
-                            <a className="justify-between">
-                                Profile
-                                <span className="badge">New</span>
-                            </a>
-                        </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
-                    </ul>
-                </div>
+                }
+
+
             </div>
         </div>
 

@@ -8,7 +8,7 @@ const Banner = () => {
         return <p>Loading</p>
     }
 
-    console.log(data);
+    // console.log(data);
     return (
         <div className="carousel w-full h-[500px] ">
             {data.map((slide) => (

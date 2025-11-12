@@ -1,7 +1,7 @@
 [
   {
     "id": "slide1",
-    "imageSrc": "https://i.ibb.co.com/vxr4W9bb/banner-6.jpg",
+    "imageSrc": "https://i.ibb.co.com/fBJdPT9/banner1.jpg",
     "altText": "Family smiling while using a tablet for financial management.",
     "title": "Manage All Your Utilities in One Place",
     "description": "Simplify your finances and keep track of everything.",
@@ -10,7 +10,7 @@
   },
   {
     "id": "slide2",
-    "imageSrc": "https://i.ibb.co.com/fBJdPT9/banner1.jpg",
+    "imageSrc": "https://i.ibb.co.com/vxr4W9bb/banner-6.jpg",
     "altText": "Abstract financial charts and graphs on a laptop screen.",
     "title": "Gain Clear Financial Overview",
     "description": "Visualize your spending and make smarter decisions.",
