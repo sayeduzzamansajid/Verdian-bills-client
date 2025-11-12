@@ -3,6 +3,8 @@ import MainLayout from "../Layouts/MainLayout";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
+import AllBillsPage from "../Pages/AllBillsPage";
+import MyProfile from "../Components/MyProfile";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
             {
                 path:'/auth/signup',
                 Component: SignUp
+            },
+            {
+                path:'bills/all-bills',
+                Component:AllBillsPage,
+            },
+            {
+                path:"my-profile",
+                Component:MyProfile
             }
         ]
     }

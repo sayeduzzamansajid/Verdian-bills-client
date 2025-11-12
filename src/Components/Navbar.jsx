@@ -4,14 +4,14 @@ import { Link, NavLink } from 'react-router';
 import toast from 'react-hot-toast';
 
 const Navbar = () => {
-    const { user, setUser,togl,setTogl,logOut } = useContext(AuthContext)
+    const { user, setUser, togl, setTogl, logOut } = useContext(AuthContext)
     const handleLogout = () => {
         console.log("logout clicked");
         logOut()
             .then(res => {
                 console.log(res);
                 setUser(null)
-               toast.success("log out successfull")
+                toast.success("log out successfull")
             })
             .catch(err => {
                 console.log(err);
@@ -29,8 +29,8 @@ const Navbar = () => {
                     <ul
                         tabIndex="-1"
                         className="menu menu-sm dropdown-content bg-primary text-white rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <NavLink>Home</NavLink>
-                        <NavLink>All Bills</NavLink>
+                        <NavLink to={"/"}>Home</NavLink>
+                        <NavLink to={"bills/all-bills"}>All Bills</NavLink>
                         <NavLink>My Profile</NavLink>
                         <li>
                             <a>Parent</a>
@@ -45,16 +45,16 @@ const Navbar = () => {
                 <a className="btn btn-ghost text-xl">Veridian Bills</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    <li><a>Home</a></li>
-                    <li><a>All Bills</a></li>
-                    <li><a>My profile</a></li>
+                <ul className="menu menu-horizontal px-1 gap-4 items-center">
+                    <NavLink to={"/"}>Home</NavLink>
+                    <NavLink to={"bills/all-bills"}>All Bills</NavLink>
+                    <NavLink to={"my-profile"}>My Profile</NavLink>
                     <li>
                         <details>
                             <summary>Bills</summary>
-                            <ul className="p-2 w-[150px]">
-                                <li><a>Add Bill</a></li>
-                                <li><a>My Bills</a></li>
+                            <ul className="p-2 w-[150px] bg-primary  text-white flex flex-col gap-2 z-10">
+                                <NavLink className={"hover:bg-white hover:text-black py-2 px-5 rounded-lg"}>Add Bills</NavLink>
+                                <NavLink className={"hover:bg-white hover:text-black py-2 px-5 rounded-lg"}>My Bills</NavLink>
                             </ul>
                         </details>
                     </li>
@@ -86,10 +86,10 @@ const Navbar = () => {
                         </ul>
                     </div> : <div>
                         <Link to={"/auth/login"}>
-                        <button onClick={()=>setTogl(true)} className={`btn btn-primary ${togl?"bg-white text-black":""}` }>Login</button>
+                            <button onClick={() => setTogl(true)} className={`btn btn-primary ${togl ? "bg-white text-black" : ""}`}>Login</button>
                         </Link>
                         <Link to={"/auth/signup"}>
-                        <button onClick={()=>setTogl(false)} className={`btn btn-primary ${togl?"":"bg-white text-black"}` }>Sign Up</button>
+                            <button onClick={() => setTogl(false)} className={`btn btn-primary ${togl ? "" : "bg-white text-black"}`}>Sign Up</button>
                         </Link>
                     </div>
                 }
