@@ -23,7 +23,7 @@ const Login = () => {
         googleSignIn()
             .then(res => {
                 toast.success("Logged in")
-                setUser(res)
+                // setUser(res)
                 navigate('/')
             })
             .catch(err => {

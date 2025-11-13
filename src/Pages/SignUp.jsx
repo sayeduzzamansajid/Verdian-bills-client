@@ -26,7 +26,7 @@ const SignUp = () => {
     const handleGoogleSignIn =()=>{
         googleSignIn()
         .then(res=> {
-            setUser(res.user)
+            // setUser(res.user)
             toast.success("Logged in")
             console.log(user);
             navigate('/')
