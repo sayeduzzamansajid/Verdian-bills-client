@@ -2,13 +2,13 @@
 @plugin "daisyui";
 @plugin "daisyui/theme" {
    name: "light";
-  default: false;
+  default: true;
   --color-primary: #35374B;
   --color-secondary: #35374B50;
 }
 @plugin "daisyui/theme" {
   name: "dark";
-  default: true;
+  default: false;
   --color-primary: #35374B;
   --color-secondary: #35374B50;
 }

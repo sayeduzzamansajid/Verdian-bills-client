@@ -20,7 +20,7 @@ const MyBills = () => {
     if (user && user.email) {
       setLoading(true);
 
-      axios.post(`http://localhost:3000/bills/my-bills`, { email: user.email })
+      axios.post(`https://bill-management-server-five.vercel.app/bills/my-bills`, { email: user.email })
         .then((res) => {
           setMyBills(res.data);
           setLoading(false);
@@ -30,7 +30,7 @@ const MyBills = () => {
           setLoading(false);
         });
     }
-  }, []);
+  }, [user,setLoading]);
 
   // Download Report as pdf
  const handleDownloadReport = () => {
@@ -84,7 +84,7 @@ const MyBills = () => {
   const handleUpdateBill = (e) => {
     e.preventDefault();
     setLoading(true);
-    axios.put(`http://localhost:3000/bills/${editBill._id}`, editBill)
+    axios.put(`https://bill-management-server-five.vercel.app/bills/${editBill._id}`, editBill)
       .then(res => {
         setMyBills(myBills.map(b => b._id === editBill._id ? editBill : b));
         setShowEditModal(false);
@@ -104,7 +104,7 @@ const MyBills = () => {
 
   const confirmDelete = () => {
     setLoading(true);
-    axios.delete(`http://localhost:3000/bills/${deleteBillId}`)
+    axios.delete(`https://bill-management-server-five.vercel.app/bills/${deleteBillId}`)
       .then(res => {
         setMyBills(myBills.filter(b => b._id !== deleteBillId));
         setShowDeleteModal(false);

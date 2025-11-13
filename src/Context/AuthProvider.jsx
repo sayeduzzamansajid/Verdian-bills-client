@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AuthContext } from './AuthContext';
 import { auth } from './../Firebase/Firebase.config';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import axios from 'axios';
 
 
@@ -44,7 +44,7 @@ const AuthProvider = ({ children }) => {
         const fetchBanners = async () => {
             try {
                 setLoading(true);
-                const res = await fetch('http://localhost:3000/bills/all-bills');
+                const res = await fetch('https://bill-management-server-five.vercel.app/bills/all-bills');
                 const data = await res.json();
                 setAllBills(data);
                 setError(null);
@@ -63,7 +63,7 @@ const AuthProvider = ({ children }) => {
     //recent data from mongoDB
     useEffect(() => {
         axios
-            .get("http://localhost:3000/")
+            .get("https://bill-management-server-five.vercel.app/")
             .then((res) => {
                 setRecentBills(res.data);
                 setLoading(false);
@@ -92,6 +92,9 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
 
+    const updateuser =(obj)=>{
+        return updateProfile(auth.currentUser,obj)
+    }
 
 
 
@@ -107,6 +110,7 @@ const AuthProvider = ({ children }) => {
         recentBills, setRecentBills,
         allBills, setAllBills,
         // MyBills,setMyBills,
+        updateuser
 
 
 

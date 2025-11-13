@@ -19,12 +19,12 @@ const Navbar = () => {
             setTheme("light")
         }
     }
-    console.log(theme);
+    // console.log(theme);
     const handleLogout = () => {
         console.log("logout clicked");
         logOut()
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 setUser(null)
                 toast.success("log out successfull")
             })

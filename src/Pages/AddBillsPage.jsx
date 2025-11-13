@@ -17,9 +17,13 @@ const AddBillsPage = () => {
             image: e.target.image.value,
             date: e.target.date.value,
             amount: parseInt(e.target.amount.value) || 0,
+            username: e.target.username.value,
+            address: e.target.address.value,
+            phone: parseInt(e.target.phone.value),
+
         }
 
-        fetch("http://localhost:3000/bills/all-bills", {
+        fetch("https://bill-management-server-five.vercel.app/bills/all-bills", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -69,6 +73,15 @@ const AddBillsPage = () => {
                         </label>
                         <label className='font-semibold' htmlFor="image">Provide Image Url :
                             <input name='image' className='bg-base-300 w-full px-4 py-2 rounded-lg placeholder:text-gray-400' placeholder='Provide the Image Url' type="text" required="true" />
+                        </label>
+                        <label className='font-semibold' htmlFor="username">Enter Username :
+                            <input name='username' className='bg-base-300 w-full px-4 py-2 rounded-lg placeholder:text-gray-400' placeholder='Provide Username' type="text" required="true" />
+                        </label>
+                        <label className='font-semibold' htmlFor="address">Provide Address :
+                            <input name='address' className='bg-base-300 w-full px-4 py-2 rounded-lg placeholder:text-gray-400' placeholder='Provide address' type="text" required="true" />
+                        </label>
+                        <label className='font-semibold' htmlFor="phone">Provide Number :
+                            <input name='phone' className='bg-base-300 w-full px-4 py-2 rounded-lg placeholder:text-gray-400' placeholder='Provide phone number' type="text" required="true" />
                         </label>
                         <label className='font-semibold' htmlFor="date">Pick a date :
                             <input name='date' className='bg-base-300 w-full px-4 py-2 rounded-lg placeholder:text-gray-400' placeholder='dd/mm/yyyy' type="date" required="true" />
