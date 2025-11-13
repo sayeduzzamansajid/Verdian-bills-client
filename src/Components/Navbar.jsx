@@ -2,9 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './../Context/AuthContext';
 import { Link, NavLink } from 'react-router';
 import toast from 'react-hot-toast';
-import useTheme from "../Hooks/useTheme";
-import ToggleButton from './UI/ToggleButton/ToggleButton';
-// Assuming you have a ToggleButton component
 
 const Navbar = () => {
 
