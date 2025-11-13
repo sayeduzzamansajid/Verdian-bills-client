@@ -30,7 +30,7 @@ const MyBills = () => {
           setLoading(false);
         });
     }
-  }, [user, setLoading]);
+  }, []);
 
   // Download Report as pdf
  const handleDownloadReport = () => {
