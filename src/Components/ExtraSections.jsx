@@ -99,7 +99,7 @@ const ExtraSections = () => {
               key={i}
               className="p-6 rounded-xl shadow-md bg-secondary hover:shadow-lg transition-all"
             >
-              <Quote className="w-8 h-8 text-blue-500 mb-3" />
+              <Quote className="w-8 h-8 text-primary" />
               <p className="italic text-gray-700 mb-4">"{t.feedback}"</p>
               <h4 className="text-sm font-semibold text-blue-600">— {t.name}</h4>
             </div>
