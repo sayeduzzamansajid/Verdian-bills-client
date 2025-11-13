@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 
 const SignUp = () => {
 
-    const { user,setUser, setTogl, createUserWithEmail,googleSignIn } = useContext(AuthContext)
+    const { user, setUser, setTogl, createUserWithEmail, googleSignIn } = useContext(AuthContext)
     const navigate = useNavigate()
 
     const handleSignUp = (e) => {
@@ -13,6 +13,23 @@ const SignUp = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password);
+        const hasUppercase = /[A-Z]/.test(password);
+        const hasLowercase = /[a-z]/.test(password);
+        const hasMinLength = password.length >= 6;
+
+        if (!hasUppercase) {
+            toast.error("Password must contain at least one uppercase letter.");
+            return;
+        }
+        if (!hasLowercase) {
+            toast.error("Password must contain at least one lowercase letter.");
+            return;
+        }
+        if (!hasMinLength) {
+            toast.error("Password must be at least 6 characters long.");
+            return;
+        }
+
         createUserWithEmail(email, password)
             .then(res => {
                 toast.success("user Created")
@@ -23,17 +40,17 @@ const SignUp = () => {
             .catch(err => toast.error(err.message))
     };
 
-    const handleGoogleSignIn =()=>{
+    const handleGoogleSignIn = () => {
         googleSignIn()
-        .then(res=> {
-            // setUser(res.user)
-            toast.success("Logged in")
-            console.log(user);
-            navigate('/')
-        })
-        .catch(err =>{
-            toast.error(err.message)
-        })
+            .then(res => {
+                // setUser(res.user)
+                toast.success("Logged in")
+                console.log(user);
+                navigate('/')
+            })
+            .catch(err => {
+                toast.error(err.message)
+            })
     }
     return (
         <div className="min-h-screen flex items-center justify-center  p-4">

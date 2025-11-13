@@ -12,7 +12,7 @@ const AllBillsPage = () => {
   }
 
     return (
-        <section className="py-16 bg-gray-50 dark:bg-secondary w-[90vw] mx-auto">
+        <section className="py-16 bg-gray-50 dark:bg-secondary w-[90vw] mx-auto mb-30 rounded-lg shadow-2xl">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8 text-center flex items-center justify-center gap-2">All Bills Here <p className='text-lg text-gray-500'>Total ({allBills.length})</p></h2>
 

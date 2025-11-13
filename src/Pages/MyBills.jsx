@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import axios from 'axios';
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 const MyBills = () => {
   const { loading, setLoading, user } = useContext(AuthContext);
@@ -30,20 +32,48 @@ const MyBills = () => {
     }
   }, [user, setLoading]);
 
-  // Download Report as CSV
-  const handleDownloadReport = () => {
-    const headers = "Username,Email,Amount,Address,Phone,Date\n";
-    const rows = myBills.map(bill =>
-      `${bill.username},${bill.email},${bill.amount},${bill.address},${bill.phone},${bill.date}`
-    ).join("\n");
-    const blob = new Blob([headers + rows], { type: 'text/csv' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'my_bills_report.csv';
-    a.click();
-    URL.revokeObjectURL(url);
-  };
+  // Download Report as pdf
+ const handleDownloadReport = () => {
+  const doc = new jsPDF();
+
+  // Title
+  doc.setFontSize(16);
+  doc.text("My Bills Report", 14, 22);
+
+  // Prepare table columns and data
+  const tableColumn = ["Username", "Email", "Amount (৳)", "Address", "Phone", "Date"];
+  const tableRows = [];
+
+  myBills.forEach(bill => {
+    const billData = [
+      bill.username,
+      bill.email,
+      bill.amount,
+      bill.address,
+      bill.phone,
+      bill.date
+    ];
+    tableRows.push(billData);
+  });
+
+  // Add AutoTable
+  doc.autoTable({
+    startY: 30,
+    head: [tableColumn],
+    body: tableRows,
+    styles: { fontSize: 10 },
+    headStyles: { fillColor: [22, 160, 133] }
+  });
+
+  // Footer with total bills and total amount
+  const finalY = doc.lastAutoTable.finalY || 30;
+  doc.setFontSize(12);
+  doc.text(`Total Bill Paid: ${myBills.length}`, 14, finalY + 10);
+  doc.text(`Total Amount: ৳${totalAmount.toLocaleString()}`, 14, finalY + 18);
+
+  // Save the PDF
+  doc.save("my_bills_report.pdf");
+};
 
   // Handle Update
   const handleEdit = (bill) => {
