@@ -12,6 +12,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [bannerData, setBannerData] = useState([]);
     const [recentBills, setRecentBills] = useState([]);
+    const [MyBills,setMyBills] = useState([])
     const [allBills, setAllBills] = useState([]);
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(true)
@@ -37,7 +38,7 @@ const AuthProvider = ({ children }) => {
 
         fetchBanners();
     }, []);
-    
+
     //all data from server from MongoDB
     useEffect(() => {
         const fetchBanners = async () => {
@@ -65,6 +66,19 @@ const AuthProvider = ({ children }) => {
             .get("http://localhost:3000/")
             .then((res) => {
                 setRecentBills(res.data);
+                setLoading(false);
+            })
+            .catch((err) => {
+                console.error("Error fetching bills:", err);
+                setLoading(false);
+            });
+    }, []);
+    //My Bill data from mongoDB
+    useEffect(() => {
+        axios
+            .get("http://localhost:3000/bills/my-bills")
+            .then((res) => {
+                setMyBills(res.data);
                 setLoading(false);
             })
             .catch((err) => {
@@ -104,7 +118,7 @@ const AuthProvider = ({ children }) => {
         logOut,
         recentBills, setRecentBills,
         allBills, setAllBills,
-
+        MyBills,setMyBills,
 
 
 

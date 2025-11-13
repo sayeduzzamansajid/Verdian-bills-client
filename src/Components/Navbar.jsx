@@ -1,10 +1,28 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './../Context/AuthContext';
 import { Link, NavLink } from 'react-router';
 import toast from 'react-hot-toast';
+import useTheme from "../Hooks/useTheme";
+import ToggleButton from './UI/ToggleButton/ToggleButton';
+// Assuming you have a ToggleButton component
 
 const Navbar = () => {
+
+    const [ theme, setTheme ] = useState(localStorage.getItem("theme"));
     const { user, setUser, togl, setTogl, logOut } = useContext(AuthContext)
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }, [theme])
+    const handleToggleTheme =()=>{
+        if(theme === "light"){
+            setTheme("dark")
+        }
+        else{
+            setTheme("light")
+        }
+    }
+    console.log(theme);
     const handleLogout = () => {
         console.log("logout clicked");
         logOut()
@@ -31,7 +49,14 @@ const Navbar = () => {
                         className="menu menu-sm dropdown-content bg-primary text-white rounded-box z-1 mt-3 w-52 p-2 shadow">
                         <NavLink to={"/"}>Home</NavLink>
                         <NavLink to={"bills/all-bills"}>All Bills</NavLink>
-                        <NavLink>My Profile</NavLink>
+                        <NavLink to={"my-profile"}>
+                            <li>
+                                <a className="justify-between">
+                                    My Profile
+                                    <span className="badge">New</span>
+                                </a>
+                            </li>
+                        </NavLink>
                         <li>
                             <a>Parent</a>
                             <ul className="p-2">
@@ -48,13 +73,12 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1 gap-4 items-center">
                     <NavLink to={"/"}>Home</NavLink>
                     <NavLink to={"bills/all-bills"}>All Bills</NavLink>
-                    <NavLink to={"my-profile"}>My Profile</NavLink>
                     <li>
                         <details>
                             <summary>Bills</summary>
                             <ul className="p-2 w-[150px] bg-primary  text-white flex flex-col gap-2 z-10">
-                                <NavLink className={"hover:bg-white hover:text-black py-2 px-5 rounded-lg"}>Add Bills</NavLink>
-                                <NavLink className={"hover:bg-white hover:text-black py-2 px-5 rounded-lg"}>My Bills</NavLink>
+                                <NavLink to={"bills/add-bills"} className={"hover:bg-white hover:text-black py-2 px-5 rounded-lg"}>Add Bills</NavLink>
+                                <NavLink to={"bills/my-bills"} className={"hover:bg-white hover:text-black py-2 px-5 rounded-lg"}>My Bills</NavLink>
                             </ul>
                         </details>
                     </li>
@@ -75,13 +99,29 @@ const Navbar = () => {
                         <ul
                             tabIndex="-1"
                             className="menu menu-sm max-sm:hidden dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow text-white bg-primary">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
-                            <li><a>Settings</a></li>
+                            <li className='flex justify-center items-center'><label className="flex cursor-pointer gap-2">
+                                <span className="label-text">Dark</span>
+                                <input onChange={handleToggleTheme} type="checkbox" value="synthwave" className="toggle theme-controller" />
+                                <span className="label-text">Light</span>
+                            </label></li>
+                            {/* <ToggleButton theme={theme} toggleTheme={toggleTheme} /> */}
+                            {/* <input
+                                type="checkbox"
+                                value="dark"
+                                className="toggle theme-controller mr-6 text-white"
+                                checked={theme === "dark"}
+                                onChange={(e) => toggleTheme(e.target.checked)}
+                            /> */}
+                            <NavLink to={"my-profile"}>
+                                <li>
+                                    <a className="justify-between">
+                                        My Profile
+                                        <span className="badge">New</span>
+                                    </a>
+                                </li>
+                            </NavLink>
+
+
                             <li onClick={handleLogout}><a>Logout</a></li>
                         </ul>
                     </div> : <div>

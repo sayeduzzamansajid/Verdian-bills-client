@@ -29,7 +29,7 @@ const Category = () => {
     return (
         <section className="py-12 bg-white w-[90vw] mx-auto ">
             <div className="container  mx-auto text-center">
-                <h2 className="text-3xl font-bold mb-8">Choose a Category</h2>
+                <h2 className="text-3xl font-bold mb-8 dark:text-black">Choose a Category</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 justify-items-center">
                     {
                         categories.map((cat) => (

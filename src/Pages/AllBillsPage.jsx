@@ -31,7 +31,7 @@ const AllBillsPage = () => {
                   className="h-42 object-cover border"
                 />
                 <div className="p-4 ">
-                  <h3 className="text-[16px] font-semibold mb-1">{bill.title}</h3>
+                  <h3 className="text-[16px] font-semibold mb-1 dark:text-gray-900">{bill.title}</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-500">
                     <strong>Category:</strong> {bill.category}
                   </p>

@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <>
-            <footer className=" bg-secondary text-base-content p-10 mt-30">
+            <footer className=" bg-secondary text-base-content p-10 ">
                 <div className='w-[80vw] footer sm:footer-horizontal mx-auto '>
                     <aside>
                         <img className='w-[100px] lg:w-[180px]'  alt="" />
