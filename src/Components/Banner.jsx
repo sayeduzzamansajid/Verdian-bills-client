@@ -10,7 +10,7 @@ const Banner = () => {
 
     // console.log(data);
     return (
-        <div className="carousel w-full h-[500px] ">
+        <div className="carousel w-[80vw] mx-auto h-[60vh]  ">
             {data.map((slide) => (
                 <div key={slide.id} id={slide.id} className="carousel-item relative w-full ">
                     <img

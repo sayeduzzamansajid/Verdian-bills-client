@@ -5,17 +5,17 @@ import toast from 'react-hot-toast';
 
 const Navbar = () => {
 
-    const [ theme, setTheme ] = useState(localStorage.getItem("theme"));
+    const [theme, setTheme] = useState(localStorage.getItem("theme"));
     const { user, setUser, togl, setTogl, logOut } = useContext(AuthContext)
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
     }, [theme])
-    const handleToggleTheme =()=>{
-        if(theme === "light"){
+    const handleToggleTheme = () => {
+        if (theme === "light") {
             setTheme("dark")
         }
-        else{
+        else {
             setTheme("light")
         }
     }
@@ -109,14 +109,9 @@ const Navbar = () => {
                                 checked={theme === "dark"}
                                 onChange={(e) => toggleTheme(e.target.checked)}
                             /> */}
-                            <NavLink to={"my-profile"}>
-                                <li>
-                                    <a className="justify-between">
-                                        My Profile
-                                        <span className="badge">New</span>
-                                    </a>
-                                </li>
-                            </NavLink>
+                            <li>
+                                <NavLink to="/my-profile">My Profile</NavLink>
+                            </li>
 
 
                             <li onClick={handleLogout}><a>Logout</a></li>
