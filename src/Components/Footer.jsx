@@ -8,7 +8,7 @@ const Footer = () => {
                     <aside>
                         <img className='w-[100px] lg:w-[180px]'  alt="" />
                         <div>
-                            <p className='text-3xl font-bold'>Veridian Bills</p>
+                            <p className='text-3xl font-bold'>Verdian Bills</p>
                             <br />
                             Providing reliable tech since 1992
                         </div>

@@ -1,7 +1,8 @@
+
 [
   {
     "id": "slide1",
-    "imageSrc": "https://i.ibb.co.com/fBJdPT9/banner1.jpg",
+    "imageSrc": "https://i.ibb.co.com/pjngMVs8/banner-0.jpg",
     "altText": "Family smiling while using a tablet for financial management.",
     "title": "Manage All Your Utilities in One Place",
     "description": "Simplify your finances and keep track of everything.",
@@ -10,26 +11,25 @@
   },
   {
     "id": "slide2",
-    "imageSrc": "https://i.ibb.co.com/vxr4W9bb/banner-6.jpg",
+    "imageSrc": "https://i.ibb.co.com/TqF48rLw/banner-1-1.jpg",
     "altText": "Abstract financial charts and graphs on a laptop screen.",
     "title": "Gain Clear Financial Overview",
     "description": "Visualize your spending and make smarter decisions.",
     "prevSlide": "slide1",
     "nextSlide": "slide3"
   },
-  
   {
     "id": "slide3",
-    "imageSrc": "https://i.ibb.co.com/cSfJPZzG/banner2.png",
+    "imageSrc": "https://i.ibb.co.com/4hwvYPR/banner-1.jpg",
     "altText": "Someone reviewing a stack of paper bills on a desk.",
     "title": "Streamline Your Monthly Payments",
     "description": "Reduce stress with automated bill reminders and payments.",
     "prevSlide": "slide2",
     "nextSlide": "slide4"
   },
-   {
+  {
     "id": "slide4",
-    "imageSrc": "https://i.ibb.co.com/sMsngD2/banner-5.jpg",
+    "imageSrc": "https://i.ibb.co.com/6RjVS0yt/banner-2.jpg",
     "altText": "Woman smiling while using a laptop to manage finances.",
     "title": "Empower Your Financial Freedom",
     "description": "Take control and achieve your financial goals.",
@@ -38,7 +38,7 @@
   },
   {
     "id": "slide5",
-    "imageSrc": "https://i.ibb.co.com/HDyXY3mT/banner3.jpg",
+    "imageSrc": "https://i.ibb.co.com/hxjr31VV/banner-3.jpg",
     "altText": "A minimalist workspace with a laptop and coffee.",
     "title": "Clean Interface, Simple Management",
     "description": "Enjoy a user-friendly experience designed for clarity.",
@@ -47,7 +47,7 @@
   },
   {
     "id": "slide6",
-    "imageSrc": "https://i.ibb.co.com/F2C6Dw4/banner-9.jpg",
+    "imageSrc": "https://i.ibb.co.com/99rLWFtt/banner-4.jpg",
     "altText": "Close-up of a finger scanning a futuristic digital lock.",
     "title": "Your Financial Data, Secured",
     "description": "Advanced security measures protect your sensitive information.",
@@ -56,7 +56,7 @@
   },
   {
     "id": "slide7",
-    "imageSrc": "https://i.ibb.co.com/KcyrKTJV/banner-10.jpg",
+    "imageSrc": "https://i.ibb.co.com/jkvncZ74/banner-5.jpg",
     "altText": "Professional working on a laptop with data visualizations.",
     "title": "Smart Budgeting & Analytics",
     "description": "Understand your spending habits with insightful reports.",
@@ -65,7 +65,7 @@
   },
   {
     "id": "slide8",
-    "imageSrc": "https://i.ibb.co.com/0jW1Y4mM/banner-primary.png",
+    "imageSrc": "https://i.ibb.co.com/DgLGXdQ7/banner-6.jpg",
     "altText": "Modern home interior with subtle smart technology elements.",
     "title": "Integrate Your Home Utilities Seamlessly",
     "description": "A single platform for all your household bills.",
@@ -74,17 +74,16 @@
   },
   {
     "id": "slide9",
-    "imageSrc": "https://i.ibb.co.com/DPMRXVtn/banner-4.jpg",
+    "imageSrc": "https://i.ibb.co.com/RkKnbn2J/banner-8.jpg",
     "altText": "Woman looking thoughtfully at paper bills and a calculator.",
     "title": "Effortless Bill Organization",
     "description": "Say goodbye to messy paperwork and missed payments.",
     "prevSlide": "slide8",
     "nextSlide": "slide10"
   },
-  
   {
     "id": "slide10",
-    "imageSrc": "https://i.ibb.co.com/Q7xyFrFd/banner-7.jpg",
+    "imageSrc": "https://i.ibb.co.com/tT14bpc0/banner-9.jpg",
     "altText": "A smartphone displaying a 'PAID' bill confirmation.",
     "title": "Pay Bills Securely and On Time",
     "description": "Quick, safe, and reliable payments for all your utilities.",
@@ -93,14 +92,13 @@
   },
   {
     "id": "slide11",
-    "imageSrc": "https://i.ibb.co.com/dJ4QBwJD/banner-8.jpg",
+    "imageSrc": "https://i.ibb.co.com/0p0tNKVF/banner-11.jpg",
     "altText": "Hand holding a smartphone with financial app on a busy street.",
     "title": "Manage Your Bills Anytime, Anywhere",
     "description": "Access your financial dashboard on the go.",
     "prevSlide": "slide10",
     "nextSlide": "slide12"
   },
- 
   {
     "id": "slide12",
     "imageSrc": "https://i.ibb.co.com/hFFDSXsq/IT-Sector.jpg",
