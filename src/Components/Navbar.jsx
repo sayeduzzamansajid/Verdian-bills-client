@@ -25,7 +25,7 @@ const Navbar = () => {
         logOut()
             .then(res => {
                 setUser(null);
-                toast.success("log out successfull");
+                toast.success("log out successfull", res);
             })
             .catch(err => {
                 console.log(err);
@@ -55,12 +55,7 @@ const Navbar = () => {
                             <NavLink to={"bills/all-bills"}>All Bills</NavLink>
 
                             <NavLink to={"my-profile"}>
-                                <li>
-                                    <a className="justify-between">
                                         My Profile
-                                        <span className="badge">New</span>
-                                    </a>
-                                </li>
                             </NavLink>
 
                             <li>

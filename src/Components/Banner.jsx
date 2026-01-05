@@ -43,7 +43,7 @@ const Banner = () => {
           }}
           navigation
           pagination={{ clickable: true }}
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
           loop={slides.length > 1}
           className="h-full"
         >
@@ -57,7 +57,7 @@ const Banner = () => {
                   loading="lazy"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-r from-black/55 via-black/20 to-transparent" />
 
                 <div className="absolute inset-0 flex items-center">
                   <div className="px-4 sm:px-10 max-w-xl text-white">
@@ -72,7 +72,7 @@ const Banner = () => {
                     <div className="mt-5 flex flex-wrap gap-3">
                       <a
                         href={s.primaryHref || "/bills/all-bills"}
-                        className="btn btn-primary"
+                        className="btn btn-primary text-white"
                       >
                         {s.primaryCta || "Explore bills"}
                       </a>
