@@ -63,7 +63,7 @@ const AuthProvider = ({ children }) => {
     //recent data from mongoDB
     useEffect(() => {
         axios
-            .get(`${import.meta.env.VITE_base_url}/bills/all-bills`)
+            .get(`${import.meta.env.VITE_base_url}`)
             .then((res) => {
                 setRecentBills(res.data);
                 setLoading(false);
