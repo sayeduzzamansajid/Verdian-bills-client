@@ -44,7 +44,7 @@ const AuthProvider = ({ children }) => {
         const fetchBanners = async () => {
             try {
                 setLoading(true);
-                const res = await fetch('https://bill-management-server-five.vercel.app/bills/all-bills');
+                const res = await fetch(`${import.meta.env.VITE_base_url}/bills/all-bills`);
                 const data = await res.json();
                 setAllBills(data);
                 setError(null);
@@ -63,7 +63,7 @@ const AuthProvider = ({ children }) => {
     //recent data from mongoDB
     useEffect(() => {
         axios
-            .get("https://bill-management-server-five.vercel.app/")
+            .get(`${import.meta.env.VITE_base_url}/bills/all-bills`)
             .then((res) => {
                 setRecentBills(res.data);
                 setLoading(false);

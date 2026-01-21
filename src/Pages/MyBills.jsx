@@ -19,8 +19,7 @@ const MyBills = () => {
   useEffect(() => {
     // if (user && user.email) {
     //   setLoading(true);
-
-      axios.get(`https://bill-management-server-five.vercel.app/bills/my-bills?email=${user.email}`)
+      axios.get(`${import.meta.env.VITE_base_url}/bills/my-bills?email=${user.email}`)
         .then((res) => {
           setMyBills(res.data);
           setLoading(false);
@@ -84,7 +83,8 @@ const MyBills = () => {
   const handleUpdateBill = (e) => {
     e.preventDefault();
     setLoading(true);
-    axios.put(`https://bill-management-server-five.vercel.app/bills/${editBill._id}`, editBill)
+    `/bills/all-bills`
+    axios.put(`${import.meta.env.VITE_base_url}/bills/${editBill._id}`, editBill)
       .then(res => {
         setMyBills(myBills.map(b => b._id === editBill._id ? editBill : b));
         setShowEditModal(false);
@@ -104,7 +104,7 @@ const MyBills = () => {
 
   const confirmDelete = () => {
     setLoading(true);
-    axios.delete(`https://bill-management-server-five.vercel.app/bills/${deleteBillId}`)
+    axios.delete(`${import.meta.env.VITE_base_url}/bills/${deleteBillId}`)
       .then(res => {
         setMyBills(myBills.filter(b => b._id !== deleteBillId));
         setShowDeleteModal(false);

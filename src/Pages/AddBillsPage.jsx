@@ -23,7 +23,7 @@ const AddBillsPage = () => {
 
         }
 
-        fetch("https://bill-management-server-five.vercel.app/bills/all-bills", {
+        fetch(`${import.meta.env.VITE_base_url}/bills/all-bills`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
