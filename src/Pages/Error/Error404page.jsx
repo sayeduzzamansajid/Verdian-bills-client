@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
+import Navbar from '../../Components/Navbar';
+import Footer from '../../Components/Footer';
 
 const Error404page = () => {
     return (

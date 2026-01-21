@@ -1,51 +1,121 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router'; // Assuming you use react-router-dom for navigation
-import { AuthContext } from '../Context/AuthContext';
+import { AuthContext } from '../../../Context/AuthContext';
 import toast from 'react-hot-toast';
 
-const Login = () => {
-    const { setUser, setTogl, signIn, googleSignIn } = useContext(AuthContext)
+const SignUp = () => {
+
+    const { user, setUser, setTogl, createUserWithEmail, googleSignIn, updateuser } = useContext(AuthContext)
     const navigate = useNavigate()
 
-    const handleLogin = (e) => {
+    const handleSignUp = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        signIn(email, password)
+        const displayName = e.target.name.value;
+        const photoURL = e.target.photo.value;
+        console.log(email, password);
+        const hasUppercase = /[A-Z]/.test(password);
+        const hasLowercase = /[a-z]/.test(password);
+        const hasMinLength = password.length >= 6;
+
+        if (!hasUppercase) {
+            toast.error("Password must contain at least one uppercase letter.");
+            return;
+        }
+        if (!hasLowercase) {
+            toast.error("Password must contain at least one lowercase letter.");
+            return;
+        }
+        if (!hasMinLength) {
+            toast.error("Password must be at least 6 characters long.");
+            return;
+        }
+
+        createUserWithEmail(email, password)
             .then(res => {
-                toast.success("Login Successfull")
-                setUser(res)
-                navigate('/')
+                const user = res.user;
+                // Update profile
+                updateuser({ displayName, photoURL })
+                    .then(() => {
+                        // Force update state
+                        setUser({ ...user, displayName, photoURL });
+
+                        toast.success("Signup successful!");
+                        navigate("/"); // navigate 
+                    })
+                    .catch(err => {
+                        console.log("Profile update failed:", err);
+                        toast.error("Profile update failed");
+                    });
             })
-            .catch(err => toast.error(err.message))
+            .catch(error => {
+                console.log("Signup error:", error);
+                toast.error(error.message);
+            });
     };
+
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(res => {
+                // setUser(res.user)
                 toast.success("Logged in")
-                // setUser(res)
+                console.log(user);
                 navigate('/')
             })
             .catch(err => {
                 toast.error(err.message)
             })
     }
-
     return (
         <div className="min-h-screen flex items-center justify-center  p-4">
-            <div className="flex w-full max-w-5xl rounded-lg shadow-lg overflow-hidden bg-white">
+            <div className="flex flex-row-reverse w-full max-w-5xl rounded-lg shadow-lg overflow-hidden bg-white">
                 {/* Left Side: Image (Hidden on small screens) */}
                 <div className="hidden md:flex md:w-1/2 bg-cover bg-center"
-                    style={{ backgroundImage: "url('https://i.pinimg.com/736x/1f/45/e7/1f45e79ccfca5bcf5fa7dfc969f7f389.jpg')" }}>
+                    style={{ backgroundImage: "url('https://i.ibb.co.com/qLy6pDrG/Gemini-Generated-Image-yza2awyza2awyza2.png')" }}>
                     {/* You can optionally add an overlay or content here */}
                 </div>
 
                 {/* Right Side: Login Form */}
                 <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                    <h2 className="text-4xl font-bold text-gray-800 mb-2">Welcome back</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 mb-2">Welcome to This website</h2>
                     <p className="text-gray-600 mb-8">Please enter your details.</p>
 
-                    <form onSubmit={handleLogin} className="space-y-6">
+                    <form onSubmit={handleSignUp} className="space-y-6">
+                        {/* name input  */}
+                        <div>
+                            <label
+                                htmlFor="name"
+                                className="block text-lg font-medium text-gray-700 mb-1"
+                            >
+                                Your Name
+                            </label>
+                            <input
+                                id="name"
+                                name='name'
+                                type="text"
+                                placeholder="Enter your name"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm
+                                           focus:ring-primary focus:border-primary sm:text-base outline-none"
+                            />
+                        </div>
+                        {/* photourl  */}
+                        <div>
+                            <label
+                                htmlFor="photo"
+                                className="block text-lg font-medium text-gray-700 mb-1"
+                            >
+                                Photo URL
+                            </label>
+                            <input
+                                id="photo"
+                                name='photo'
+                                type="text"
+                                placeholder="Provide your photo url"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm
+                                           focus:ring-primary focus:border-primary sm:text-base outline-none"
+                            />
+                        </div>
                         {/* Email Input */}
                         <div>
                             <label htmlFor="email" className="block text-lg font-medium text-gray-700 mb-1">
@@ -105,7 +175,7 @@ const Login = () => {
                                            hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2
                                            focus:ring-gray-700 transition duration-150 ease-in-out"
                             >
-                                Log in
+                                Sign Up
                             </button>
                         </div>
                     </form>
@@ -120,11 +190,12 @@ const Login = () => {
                         </button>
                     </div>
 
+
                     {/* Register Link */}
                     <p className="mt-8 text-center text-base text-gray-600">
-                        Don't have an account?{' '}
-                        <Link onClick={() => setTogl(false)} to="/auth/signup" className="font-medium text-primary hover:text-primary-dark">
-                            SignUp here
+                        Already have an account?{' '}
+                        <Link onClick={() => setTogl(true)} to="/auth/login" className="font-medium text-primary hover:text-primary-dark">
+                            Login here
                         </Link>
                     </p>
                 </div>
@@ -133,4 +204,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default SignUp;

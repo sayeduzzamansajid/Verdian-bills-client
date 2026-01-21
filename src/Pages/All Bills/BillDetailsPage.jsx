@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useLoaderData, useParams } from 'react-router';
-import { AuthContext } from '../Context/AuthContext';
+import { AuthContext } from '../../Context/AuthContext';
 import toast from 'react-hot-toast';
 
 const BillDetailsPage = () => {

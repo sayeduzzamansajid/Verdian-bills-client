@@ -1,24 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { AuthContext } from './../Context/AuthContext';
 import { Link, NavLink } from 'react-router';
 import toast from 'react-hot-toast';
+import { BiLogOut } from 'react-icons/bi';
 
 const Navbar = () => {
 
-    // CHANGED: Give theme a safe default so it never becomes null on first load.
-    // (Your previous code used localStorage.getItem("theme") directly.)
-    const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
-
     const { user, setUser, togl, setTogl, logOut } = useContext(AuthContext);
-
-    useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-    }, [theme]);
-
-    const handleToggleTheme = () => {
-        setTheme(prev => (prev === "light" ? "dark" : "light"));
-    };
 
     const handleLogout = () => {
         console.log("logout clicked");
@@ -45,53 +33,33 @@ const Navbar = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
                         </div>
-
-                        {/* CHANGED: dropdown background also glass so it matches navbar */}
                         <ul
                             tabIndex="-1"
                             className="menu menu-sm dropdown-content glass bg-base-100/60 backdrop-blur-lg rounded-box z-50 mt-3 w-52 p-2 shadow"
                         >
-                            <NavLink to={"/"}>Home</NavLink>
-                            <NavLink to={"bills/all-bills"}>All Bills</NavLink>
-
-                            <NavLink to={"my-profile"}>
-                                        My Profile
-                            </NavLink>
-
-                            <li>
-                                <a>Parent</a>
-                                <ul className="p-2">
-                                    <li><a>Bills</a></li>
-                                    <li><a>Add Bill</a></li>
-                                </ul>
-                                <NavLink onClick={handleLogout}>Logout</NavLink>
-                            </li>
+                            <NavLink className={"py-3 px-6 bg-gray-400 mt-2 rounded-lg flex items-center justify-center"} to={"/"}>Home</NavLink>
+                            <NavLink className={"py-3 px-6 bg-gray-400 mt-2 rounded-lg flex items-center justify-center"} to={"bills/all-bills"}>All Bills</NavLink>
+                            <NavLink className={"py-3 px-6 bg-gray-400 mt-2 rounded-lg flex items-center justify-center"} to={"/"}>Home</NavLink>
+                            <NavLink className={"py-3 px-6 bg-gray-400 mt-2 rounded-lg flex items-center justify-center"} to={"bills/all-bills"}>All Bills</NavLink>
+                            <NavLink className={"py-3 px-6 bg-gray-400 mt-2 rounded-lg flex items-center justify-center"} to={"/about"}>About</NavLink>
+                            <NavLink className={"py-3 px-6 bg-gray-400 mt-2 rounded-lg flex items-center justify-center"} to={"contact"}>Contact</NavLink>
+                            <NavLink className={"py-3 px-6 bg-gray-400 mt-2 rounded-lg flex items-center justify-center"} to={"blog"}>Blog</NavLink>
+                            <NavLink className={"py-3 px-6 bg-gray-400 mt-2 rounded-lg flex items-center justify-center"} to={"dashboard"}>My Profile</NavLink>
+                            <NavLink className={"py-3 px-6 bg-gray-400 mt-2 rounded-lg flex items-center justify-center"} onClick={handleLogout}><BiLogOut className='text-black mr-5'/> Logout</NavLink>
                         </ul>
                     </div>
 
-                    <NavLink to={"/"} className="btn btn-ghost text-xl lg:text-2xl font-extrabold">Verdian Bills</NavLink>
+                    <Link to={"/"} className=" text-xl lg:text-2xl font-extrabold">Verdian Bills</Link>
                 </div>
 
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-4 items-center">
-                        <NavLink to={"/"}>Home</NavLink>
-                        <NavLink to={"bills/all-bills"}>All Bills</NavLink>
-
-                        <li>
-                            <details>
-                                <summary>Bills</summary>
-
-                                {/* CHANGED: submenu glass too (also removed bg-primary/text-white) */}
-                                <ul className="p-2 w-[150px] glass bg-base-100/70 backdrop-blur-lg flex flex-col gap-2 z-50">
-                                    <NavLink to={"bills/add-bills"} className={"hover:bg-base-200 py-2 px-5 rounded-lg"}>
-                                        Add Bills
-                                    </NavLink>
-                                    <NavLink to={"bills/my-bills"} className={"hover:bg-base-200 py-2 px-5 rounded-lg"}>
-                                        My Bills
-                                    </NavLink>
-                                </ul>
-                            </details>
-                        </li>
+                        <NavLink className={"mr-1 font-semibold hover:bg-secondary p-3 hover:rounded-lg"} to={"/"}>Home</NavLink>
+                        <NavLink className={"mr-1 font-semibold hover:bg-secondary p-3 hover:rounded-lg"} to={"bills/all-bills"}>All Bills</NavLink>
+                        <NavLink className={"mr-1 font-semibold hover:bg-secondary p-3 hover:rounded-lg"} to={"/about"}>About</NavLink>
+                        <NavLink className={"mr-1 font-semibold hover:bg-secondary p-3 hover:rounded-lg"} to={"contact"}>Contact</NavLink>
+                        <NavLink className={"mr-1 font-semibold hover:bg-secondary p-3 hover:rounded-lg"} to={"blog"}>Blog</NavLink>
+                        <NavLink className={"mr-1 font-semibold hover:bg-secondary p-3 hover:rounded-lg"} to={"faq"}>FAQ</NavLink>
                     </ul>
                 </div>
 
@@ -105,34 +73,11 @@ const Navbar = () => {
                             </div>
 
                             {/* CHANGED: avatar dropdown glass */}
-                            <ul
-                                tabIndex="-1"
-                                className="menu menu-sm max-sm:hidden dropdown-content glass bg-base-100/60 backdrop-blur-lg rounded-box z-50 mt-3 w-52 p-2 shadow"
-                            >
-                                <li className='flex justify-center items-center'>
-                                    <label className="flex cursor-pointer gap-2">
-                                        <span className="label-text">Light</span>
-
-                                        {/* CHANGED: Make toggle controlled so UI matches current theme */}
-                                        <input
-                                            onChange={handleToggleTheme}
-                                            type="checkbox"
-                                            className="toggle"
-                                            checked={theme === "dark"}
-                                        />
-
-                                        <span className="label-text">Dark</span>
-                                    </label>
-                                </li>
-
-                                <li>
-                                    <NavLink to="/my-profile">My Profile</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/Dashboard">Myffile</NavLink>
-                                </li>
-
-                                <li onClick={handleLogout}><a>Logout</a></li>
+                            <ul tabIndex="-1"
+                                className="menu menu-sm max-sm:hidden dropdown-content glass bg-base-100/60 backdrop-blur-lg rounded-box z-50 mt-3 w-52 p-2 shadow">
+                                <li className='flex justify-center items-center py-1' ><NavLink className={"w-full py-2 flex items-center justify-center font-semibold text-md" } to="dashboard/my-profile">My Profile</NavLink></li>
+                                <li className='flex justify-center items-center py-1' > <NavLink className={"w-full py-2  flex items-center justify-center font-semibold text-md"} to="/Dashboard">Dashboard</NavLink> </li>
+                                <li className='flex justify-center items-center py-1'  onClick={handleLogout}> <NavLink className={"w-full py-2  flex items-center justify-center font-semibold text-md"} to="/Dashboard">Logout</NavLink> </li>
                             </ul>
                         </div>
                     ) : (
