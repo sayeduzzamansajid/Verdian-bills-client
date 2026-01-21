@@ -15,6 +15,7 @@ const AuthProvider = ({ children }) => {
     // const [MyBills,setMyBills] = useState([])
     const [allBills, setAllBills] = useState([]);
     const [loading, setLoading] = useState(true)
+    const [loading1, setLoading1] = useState(true)
     const [error, setError] = useState(true)
     const [togl, setTogl] = useState(null)
 
@@ -102,6 +103,7 @@ const AuthProvider = ({ children }) => {
         bannerData,
         user, setUser,
         loading, setLoading,
+        loading1, setLoading1,
         error, setError,
         togl, setTogl,
         createUserWithEmail, signIn,
@@ -119,9 +121,10 @@ const AuthProvider = ({ children }) => {
 
     //observer
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            setUser(user);
-            setLoading(false)
+        const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
+            setUser(currentuser);
+            console.log(currentuser);
+            setLoading1(false)
         })
 
         return () => {
@@ -130,9 +133,9 @@ const AuthProvider = ({ children }) => {
 
     }, [])
 
-    return <AuthContext value={authinfo}>
+    return <AuthContext.Provider value={authinfo}>
         {children}
-    </AuthContext>
+    </AuthContext.Provider>
 };
 
 export default AuthProvider;

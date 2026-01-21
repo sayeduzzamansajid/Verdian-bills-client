@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 
 const MyProfile = () => {
     const { user, setUser } = useContext(AuthContext)
+    console.log(user);
     const nameref = useRef();
     const emailref = useRef();
     const photoref = useRef();
@@ -42,7 +43,7 @@ const MyProfile = () => {
             <figure>
                 <img
                     className='lg:w-[450px] p-8'
-                    src={user.photoURL}
+                    src={user?.photoURL}
                     alt="Album" />
             </figure>
             <div className="card-body">

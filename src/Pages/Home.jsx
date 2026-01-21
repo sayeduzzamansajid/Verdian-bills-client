@@ -7,7 +7,6 @@ import ExtraSections from '../Components/ExtraSections';
 const Home = () => {
     return (
         <div>
-            {/* <Slider/> */}
             <Banner/>
             <Category/>
             <RecentBills/>

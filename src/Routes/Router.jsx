@@ -10,12 +10,13 @@ import BillDetailsPage from "../Pages/BillDetailsPage";
 import AddBillsPage from "../Pages/AddBillsPage";
 import MyBills from "../Pages/MyBills";
 import Error404page from "../Pages/Error404page";
+import DashboardLayout from "../Layouts/DashboardLayout";
 
 const router = createBrowserRouter([
     {
-        path: '/',
+        path:'/',
         Component: MainLayout,
-        errorElement:<Error404page/>,
+        errorElement: <Error404page />,
         children: [
             {
                 index: true,
@@ -35,29 +36,36 @@ const router = createBrowserRouter([
             },
             {
                 path: "/bills/:id",
-                loader: ({ params }) => fetch(`https://bill-management-server-five.vercel.app/bills/${params.id}`),
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_base_url}/bills/${params.id}`),
                 element: <BillDetailsPage></BillDetailsPage>
             },
-            {
-                path:'/bills/add-bills',
-                element:<PrivateRoute>
-                    <AddBillsPage/>
-                </PrivateRoute>
-            },
-            {
-                path:'/bills/my-bills',
-                element:<PrivateRoute>
-                    <MyBills/>
-                </PrivateRoute>
-            },
-            {
-                path: "my-profile",
-                element: <PrivateRoute>
-                    <MyProfile/>
-                </PrivateRoute>
-            }
+
+
         ]
+    },
+    {
+        path: '/dashboard',
+        errorElement: <Error404page />,
+        element: <PrivateRoute>
+            <DashboardLayout />
+        </PrivateRoute>,
+        children: [
+            {
+               index:true,
+                element: <MyProfile />
+            },
+            {
+                path: 'my-bills',
+                element: <MyBills />
+            },
+            {
+                path: 'add-bills',
+                element: <AddBillsPage />
+            },
+        ]
+
     }
+
 ])
 
 export default router

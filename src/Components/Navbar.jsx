@@ -128,6 +128,9 @@ const Navbar = () => {
                                 <li>
                                     <NavLink to="/my-profile">My Profile</NavLink>
                                 </li>
+                                <li>
+                                    <NavLink to="/Dashboard">Myffile</NavLink>
+                                </li>
 
                                 <li onClick={handleLogout}><a>Logout</a></li>
                             </ul>
