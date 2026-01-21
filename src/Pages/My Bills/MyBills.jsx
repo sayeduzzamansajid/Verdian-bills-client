@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { AuthContext } from '../Context/AuthContext';
 import axios from 'axios';
 import jsPDF from "jspdf";
 import "jspdf-autotable";
+import { AuthContext } from '../../Context/AuthContext';
 
 const MyBills = () => {
   const { loading, setLoading, user } = useContext(AuthContext);

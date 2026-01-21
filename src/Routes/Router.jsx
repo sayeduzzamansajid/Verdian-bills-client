@@ -1,16 +1,20 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../Layouts/MainLayout";
-import Home from "../Pages/Home";
-import Login from "../Pages/Login";
-import SignUp from "../Pages/SignUp";
-import AllBillsPage from "../Pages/AllBillsPage";
-import MyProfile from "../Components/MyProfile";
+import Home from "../Pages/Home/Home";
+import SignUp from "../Pages/Auth/Register/SignUp";
+import Login from "../Pages/Auth/Login/Login";
+import AllBillsPage from "../Pages/All Bills/AllBillsPage";
+import BillDetailsPage from "../Pages/All Bills/BillDetailsPage";
+import Error404page from "../Pages/Error/Error404page";
 import PrivateRoute from "../Private/PrivateRoute";
-import BillDetailsPage from "../Pages/BillDetailsPage";
-import AddBillsPage from "../Pages/AddBillsPage";
-import MyBills from "../Pages/MyBills";
-import Error404page from "../Pages/Error404page";
 import DashboardLayout from "../Layouts/DashboardLayout";
+import MyProfile from "../Components/MyProfile";
+import AddBillsPage from "../Pages/Add Bills/AddBillsPage";
+import MyBills from "../Pages/My Bills/MyBills";
+import About from "../Pages/Additional/About";
+import Contact from "../Pages/Additional/Contact";
+import FAQ from "../Pages/Additional/FAQ";
+import Blog from "../Pages/Additional/Blog";
 
 const router = createBrowserRouter([
     {
@@ -28,7 +32,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/auth/signup',
-                Component: SignUp
+                element: SignUp
             },
             {
                 path: '/bills/all-bills',
@@ -39,6 +43,22 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`${import.meta.env.VITE_base_url}/bills/${params.id}`),
                 element: <BillDetailsPage></BillDetailsPage>
             },
+            {
+                path:'about',
+                Component:About
+            },
+            {
+                path:'contact',
+                Component:Contact
+            },
+            {
+                path:'faq',
+                Component:FAQ
+            },
+            {
+                path:'blog',
+                Component:Blog
+            }
 
 
         ]
@@ -53,6 +73,10 @@ const router = createBrowserRouter([
             {
                index:true,
                 element: <MyProfile />
+            },
+            {
+                path:'my-profile',
+                element:<MyProfile/>
             },
             {
                 path: 'my-bills',

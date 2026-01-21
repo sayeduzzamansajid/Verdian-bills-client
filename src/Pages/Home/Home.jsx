@@ -1,8 +1,8 @@
 import React from 'react';
-import Banner from '../Components/Banner';
-import Category from '../Components/Category';
-import RecentBills from '../Components/RecentBills';
-import ExtraSections from '../Components/ExtraSections';
+import Banner from '../../Components/Banner';
+import Category from '../../Components/Category';
+import RecentBills from '../../Components/RecentBills';
+import ExtraSections from '../../Components/ExtraSections';
 
 const Home = () => {
     return (

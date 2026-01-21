@@ -9,7 +9,7 @@
   --color-secondary: #35374B50;
 }
 
-@plugin "daisyui/theme" {
+/* @plugin "daisyui/theme" {
   name: "dark";
   default: false;
   --color-primary: #35374B;
@@ -18,15 +18,21 @@
 
 @layer base {
   /* Light (default) */
-  body {
+  /* body {
     min-height: 100vh;
     background: linear-gradient(135deg, #f8fafc, #ffffff, #eef2ff);
     color: #0f172a;
-  }
+  } */
 
   /* Dark when daisyUI theme is dark */
-  html[data-theme="dark"] body {
+  /* html[data-theme="dark"] body {
     background: linear-gradient(135deg, #020617, #0f172a, #1e1b4b);
     color: #f8fafc;
   }
+} */
+
+a.active{
+  border-bottom: 4px solid #35374B50;
+
+
 }
